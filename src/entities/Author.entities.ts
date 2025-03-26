@@ -6,7 +6,6 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { AuthorProfile } from './AuthorProfile.entities';
 import { Book } from './Book.entities';
 
 @Entity()
@@ -22,10 +21,6 @@ export class Author {
 
   @Column()
   avatar: string;
-
-  @OneToOne(() => AuthorProfile)
-  @JoinColumn()
-  profile?: AuthorProfile;
 
   @OneToMany(() => Book, (book) => book.author)
   books: Book[];

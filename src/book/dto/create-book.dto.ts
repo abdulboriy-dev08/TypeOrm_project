@@ -4,6 +4,9 @@ export class CreateBookDto {
   @ApiProperty({ example: 'Harry Potter 1' })
   name: string;
 
-  @ApiProperty({ example: '2001' })
-  year: number;
+  @ApiProperty({ example: 'This book is very interesting and amazing' })
+  description: string;
+
+  @ApiProperty({ example: '1' })
+  authorId: number;
 }

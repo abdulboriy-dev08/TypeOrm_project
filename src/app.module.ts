@@ -7,7 +7,6 @@ import { Author } from './entities/Author.entities';
 import { AuthorModule } from './author/author.module';
 import { UploadModule } from './upload/upload.module';
 import { ProfileModule } from './profile/profile.module';
-import { AuthorProfile } from './entities/AuthorProfile.entities';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
@@ -21,7 +20,8 @@ import { join } from 'path';
       username: 'root',
       password: '12345',
       database: 'TypeormProject',
-      entities: [Book, Author, AuthorProfile],
+      entities: [Book, Author],
+      synchronize: false,
     }),
     BookModule,
     AuthorModule,
@@ -34,4 +34,5 @@ import { join } from 'path';
   controllers: [],
   providers: [],
 })
+
 export class AppModule {}

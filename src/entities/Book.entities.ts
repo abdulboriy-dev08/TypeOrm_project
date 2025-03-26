@@ -11,8 +11,8 @@ export class Book {
   @Column()
   name: string;
 
-  @Column({ type: 'int' })
-  year: number;
+  @Column()
+  description: string;
 
   @ManyToOne(() => Author, (author) => author.books)
   author: Author;
